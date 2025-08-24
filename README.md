@@ -1,12 +1,19 @@
-# Microservices (User, Order, Product) — Business Logic + Docker
+# 🏗️ Microservices Architecture with Spring Boot, Docker & API Gateway
 
-**Modules**
-- `user-service` — H2 (in-memory), CRUD users (port 8081)
-- `order-service` — MySQL, CRUD orders (port 8082), uses **OpenFeign** to call user-service & product-service
-- `product-service` — MongoDB, CRUD products (port 8083), exposes **/reserve** to atomically reduce stock
+This project is a **multi-module Maven** application that demonstrates a simple **microservices-based architecture** using **Spring Boot**, **Spring Cloud**, **Docker**, and **Databases (MySQL, MongoDB, H2)**.  
 
-**Run**
-```bash
-mvn clean package -DskipTests
-docker compose up --build
-```
+---
+
+## 📌 Features
+- **User Service** → manages users (uses H2 database)
+- **Product Service** → manages products (uses MongoDB)
+- **Order Service** → manages orders (uses MySQL, communicates with User & Product services)
+- **API Gateway** → entry point for all clients (routes requests to services)
+- **Service Communication** via **REST** & **Feign Clients**
+- **Docker Compose** to run all services + databases
+- **Health Checks** for container orchestration
+- **Swagger (OpenAPI)** for API documentation
+
+---
+
+## 🏗️ Project Structure
